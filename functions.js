@@ -69,9 +69,16 @@ console.log(characterCount("Character Count is clever", "c"));
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
+
   // Your code here
+  const arrayofDiff=numbers.slice(1).map((x,i) => numbers[i]-x);
+  
+    arrayofDiff.sort();
+  const length= arrayofDiff.length;
+  const largestDiff= arrayofDiff[length-1];
+  return largestDiff;
 }
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
 /**
  * afterX(numbers, x):
@@ -86,8 +93,11 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
+  const result= numbers.splice(x, numbers.length);
+  return result;
+
 }
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 /**
  * abbreviate(firstName, lastName):
@@ -102,8 +112,13 @@ function afterX(numbers, x) {
  */
 function abbreviate(firstName, lastName) {
   // Your code here
+  const firstname=firstName.toUpperCase();
+  const secondname=lastName.toUpperCase();
+  const arrayFirstname = firstname.split('');
+  const arraySecondname = secondname.split('');
+  return arrayFirstname[0] + arraySecondname[0];
 }
-// console.log(abbreviate("miss", "Stephane"));
+console.log(abbreviate("miss", "Stephane"));
 
 /**
  * isUpperCase(string):
@@ -117,9 +132,12 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+  const upperstring=string.toUpperCase();
+  return string===upperstring;
+
 }
 
-// console.log(isUpperCase("JCREW"));
+ console.log(isUpperCase("JCREW"));
 
 /**
  * elementInArray(numbers, x):
@@ -133,8 +151,11 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+ const newArray= numbers.filter(Element => Element=== x);
+ if(newArray.length ===0) return false;
+ else return true;
 }
-// console.log(elementInArray([5, 6, 7], 8));
+ console.log(elementInArray([5, 6, 7], 8));
 
 module.exports = {
   sumOdds,
