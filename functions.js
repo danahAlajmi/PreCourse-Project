@@ -93,7 +93,8 @@ console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
  */
 function afterX(numbers, x) {
   // Your code here
-  const result= numbers.splice(x, numbers.length);
+  const index = numbers.indexOf(x)
+  const result= numbers.splice(index+1, numbers.length);
   return result;
 
 }
