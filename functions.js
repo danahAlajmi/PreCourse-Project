@@ -71,7 +71,7 @@ console.log(characterCount("Character Count is clever", "c"));
 function largestIncrement(numbers) {
 
   // Your code here
-  const arrayofDiff=numbers.slice(1).map((x,i) => numbers[i]-x);
+  const arrayofDiff=numbers.slice(1).map((x,i) => x-numbers[i]);
   
     arrayofDiff.sort();
   const length= arrayofDiff.length;
