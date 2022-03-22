@@ -18,28 +18,39 @@
  * sumOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]) -> 25
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
-function sumOdds(numbers) {
+ function sumOdds(numbers) {
   // Your code here
+ const oddNumbers= numbers.filter( number => number%2 !==0);
+ const initialValue=0;
+ const sumNumbers= oddNumbers.reduce( (previousValue, currentValue) => previousValue + currentValue,
+ initialValue);
+ return sumNumbers;
 }
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
 /**
- * characterCount(string, c):
- * - receives a string and a character
- * - returns the number of times `c` occurs in the string
- * - note: this has to be case-insensitive
- *
- * e.g.
- * characterCount("Michael Stephenson", "e") -> 3
- * characterCount("Character Count is clever", "c") -> 4
- *
- * Hint: You need to turn the string into an array first
- * Another Hint: Use string methods to make it case-insensitive
- */
+* characterCount(string, c):
+* - receives a string and a character
+* - returns the number of times `c` occurs in the string
+* - note: this has to be case-insensitive
+*
+* e.g.
+* characterCount("Michael Stephenson", "e") -> 3
+* characterCount("Character Count is clever", "c") -> 4
+*
+* Hint: You need to turn the string into an array first
+* Another Hint: Use string methods to make it case-insensitive
+*/
 function characterCount(string, c) {
   // Your code here
+  const stringInsensitive=string.toLowerCase() ;
+  const cCharacterInsent = c.toLowerCase();
+  const arrayCharacters=stringInsensitive.split('');
+  const arrayofC=arrayCharacters.filter( Element => Element===cCharacterInsent);
+  return arrayofC.length;
 }
-// console.log(characterCount("Character Count is clever", "c"));
+console.log(characterCount("Character Count is clever", "c"));
+
 
 /**
  * largestIncrement(numbers):
